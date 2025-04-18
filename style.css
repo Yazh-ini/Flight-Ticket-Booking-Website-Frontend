@@ -1,0 +1,299 @@
+/* General styling */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: url('flight1.jpg') no-repeat center center fixed;
+    background-size: cover;
+    height: 100vh;
+    position: relative;
+    color: white;
+}
+
+header {
+    background-color: #5683e6;
+    padding: 20px;
+    color: white;
+    text-align: center;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 10;
+}
+
+header nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+header nav ul li {
+    display: inline;
+    margin-right: 20px;
+}
+
+header nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+header nav ul li a:hover {
+    color: #021f1d;
+    background-color: #0044cc;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+/* Hide sections initially */
+section {
+    display: none;
+    padding: 20px;
+    margin-top: 80px;
+    color: white;
+}
+
+section.active {
+    display: block;
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* About Us section with original background image */
+#about {
+    background: url('flight4.JPG') no-repeat center center;
+    background-size: cover;
+    position: relative;
+    height: 1000px;
+}
+
+/* Flexbox layout for alternating content and image alignment */
+.about-content {
+    display: flex;
+    align-items: center;
+    margin-bottom: 40px;
+}
+
+.about-content img {
+    max-width: 40%;
+    height: auto;
+    opacity: 0.9;
+}
+
+.about-text {
+    flex: 1;
+    padding: 0 20px;
+    text-align: justify;
+}
+
+.about-content:nth-child(even) {
+    flex-direction: row-reverse; /* Swap for alternating layout */
+}
+
+#about h2 {
+    color: black;
+}
+
+#about p {
+    color: white;
+    transition: transform 0.3s ease;
+}
+
+#about p:hover {
+    transform: scale(1.05); /* Zoom-in effect */
+}
+#book-tickets {
+    background: url('flight4.JPG') no-repeat center center;
+    background-size: cover;
+    position: relative;
+    height: 1000px;
+}
+
+
+label {
+    display: block;
+    margin: 10px 0 5px;
+}
+
+input[type="text"],
+input[type="number"],
+input[type="date"],
+select {
+    width: 30%;
+    padding: 10px;
+    border: 1px solid #ffffff;
+    border-radius: 5px;
+    margin-bottom: 15px;
+    background-color: rgba(255, 255, 255, 0.8); /* Light background for inputs */
+}
+
+/* Button styling for booking */
+button {
+    background-color: #0044cc;
+    color: white;
+    padding: 15px 15px;
+    border: none;
+    border-radius: 5px; /* Rounded corners for buttons */
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #0033a0;
+}
+#flight-options{
+    button {
+        background-color: #0044cc;
+        color: white;
+        padding: 15px 15px;
+        width:100px;
+        border: none;
+        border-radius: 5px; /* Rounded corners for buttons */
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+    }
+     
+}
+/* Seat selection styling */
+#seat-map {
+    display: flex;
+    flex-wrap: wrap;
+    width: 300px; /* Set a fixed width for the seat map */
+    margin: 20px 0;
+}
+
+.seat {
+    width: 30px;
+    height: 30px;
+    margin: 5px;
+    border: 1px solid #fff;
+    text-align: center;
+    line-height: 30px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.seat.selected {
+    background-color: rgb(38, 124, 16); /* Highlight selected seats */
+}
+
+.seat.booked {
+    background-color: red; /* Mark booked seats */
+    cursor: not-allowed; /* Indicate booked seats are not clickable */
+}
+
+/* Payment section styles */
+#payment input[type="text"] {
+    margin-bottom: 10px;
+}
+
+.ticket-card {
+    width: 300px; /* Adjust the width as per your design */
+    margin: 20px auto; /* Center the card */
+    padding: 20px;
+    border-radius: 10px;
+    background-color: #f9f9f9;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Shadow for the card effect */
+    border: 2px solid #ccc;
+}
+
+.ticket-card h3 {
+    text-align: center;
+    color: #288311;
+    margin-bottom: 20px;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.ticket-card p {
+    font-size: 16px;
+    color: #0a0a0a;
+    line-height: 1.6;
+    border-top: 1px solid #ddd;
+    padding-top: 10px;
+}
+
+.ticket-card p span {
+    font-weight: bold;
+    color: #000;
+}
+
+/* Scope styles specifically for the contact-us-container class */
+.contact-us-container {
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    max-width: 400px;
+    width: 100%;
+    margin: 0 auto;
+    margin-top: 50px;
+}
+
+.contact-us-container h1 {
+    text-align: center;
+    font-size: 2em;
+    color: #0a0a0a;
+    margin-bottom: 20px;
+}
+.contact-us-container p {
+    font-size: 16px;
+    color: #0a0a0a;
+    line-height: 1.6;
+    border-top: 1px solid #ddd;
+    padding-top: 10px;
+}
+
+.contact-us-container label {
+    display: block;
+    color: #0a0a0a;
+    margin: 15px 0 5px;
+}
+
+.contact-us-container input[type="text"], 
+.contact-us-container input[type="email"], 
+.contact-us-container textarea {
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    margin-bottom: 10px;
+    font-size: 1em;
+}
+
+.contact-us-container textarea {
+    height: 100px;
+}
+
+.contact-us-container button {
+    width: 100%;
+    padding: 12px;
+    background-color: #4CAF50;
+    color: rgb(10, 10, 10);
+    font-size: 1.1em;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.contact-us-container button:hover {
+    background-color: #45a049;
+}
+
+.contact-us-container #form-status {
+    margin-top: 15px;
+    font-size: 1em;
+    color: green;
+    text-align: center;
+}
+
+

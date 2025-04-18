@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flight Ticket Booking Service</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Flight Ticket Booking Service</h1>
+        <nav>
+            <ul>
+                <li><a id="about-link" onmouseover="showSection('about')">About Us</a></li>
+                <li><a id="book-tickets-link" onmouseover="showSection('book-tickets')">Book Tickets</a></li>
+                <li><a id="contact-link" onmouseover="showSection('contact')">Contact Us</a></li>
+            </ul>
+        </nav>
+    </header>
+
+   
+<section id="about" class="section">
+    <h2>About Us</h2>
+
+    <!-- First image on the left, content on the right -->
+    <div class="about-content">
+        <img src="flight2.jpg" alt="Flight Image">
+        <div class="about-text">
+            <h3>About Our Flight Service</h3>
+            <p>we are dedicated to making your travel experience as seamless as possible. Our mission is to provide you with the best deals on flights, whether you're traveling domestically or internationally. We understand that planning a trip can be overwhelming, but with our user-friendly platform, we aim to simplify the process and take the stress out of booking flights.
+                We believe in the power of travel to bring people together. Whether you're traveling for business, leisure, or a once-in-a-lifetime adventure, we're committed to helping you get there. Our vision is to be your go-to platform for all your flight booking needs, ensuring that each journey is affordable, enjoyable, and stress-free.
+            </p>
+        </div>
+    </div>
+
+    <!-- Second image on the right, content on the left -->
+    <div class="about-content">
+        <img src="flight3.jpg" alt="Another Flight Image">
+        <div class="about-text">
+            <h3>Our Commitment</h3>
+            <p>
+                With years of expertise in the travel industry, we pride ourselves on offering top-tier services to our customers. Here's why thousands of travelers trust us:
+                </p><p>Comprehensive Flight Options: We work with hundreds of airlines worldwide to provide you with the most convenient and cost-effective flight options. Whether you're looking for a direct flight or a multi-stop journey, we have something for everyone.
+                </p><p>Best Price Guarantee: Our advanced search engine allows you to compare flight prices and find the best deals. We're committed to offering affordable options without compromising on quality.
+            </p><p>Seamless Booking Process: We value your time, which is why we've made the booking process as straightforward as possible. From choosing flights to making payments, every step is designed to be quick, simple, and secure.
+                
+                </p>
+        </div>
+    </div>
+
+</section>
+<section id="book-tickets" class="section" style="background-image: url('flight4.JPG');">
+    <h2>Book Tickets</h2>
+    <form id="booking-form">
+        <label for="source">Source:</label>
+        <input type="text" id="source" required>
+
+        <label for="destination">Destination:</label>
+        <input type="text" id="destination" required>
+
+        <label for="date">Date of Journey:</label>
+        <input type="date" id="date" required>
+
+        <label for="passengers">Number of Passengers:</label>
+        <input type="number" id="passengers" min="1" required>
+
+        <button type="button" onclick="checkAvailability()">Check Flights</button>
+    </form>
+
+    <div id="flight-options" style="display: none;">
+        <h1>Select a Flight</h1>
+        <select id="flight-select"></select>
+        <button onclick="goToSeatSelection()">Next</button>
+    </div>
+
+    <div id="seat-selection" style="display: none;">
+        <h3>Select Your Seat</h3>
+        <div id="seat-map"></div>
+        <button onclick="proceedToPayment()">Proceed to Payment</button>
+    </div>
+<div id="payment" style="display: none;">
+        <h3>Payment</h3>
+        
+        <label for="card-number">Card Number:</label>
+        <input type="text" id="card-number" required>
+        <br><br>
+    
+        <label for="card-name">Cardholder Name:</label>
+        <input type="text" id="card-name" required>
+        <br><br>
+    
+        <label for="card-expiry">Expiry Date (MM/YY):</label>
+        <input type="text" id="card-expiry" placeholder="MM/YY" required>
+        <br><br>
+    
+        <label for="card-cvv">CVV:</label>
+        <input type="text" id="card-cvv" required>
+        <br><br>
+    
+        <button onclick="confirmBooking()">Book Ticket</button>
+    </div>
+<div id="ticket" style="display: none;">
+    <div class="ticket-card">
+        <h3>Ticket Successfully Booked!</h3>
+        <h3>Ticket Details</h3>
+        <p id="ticket-details"></p>
+    </div>
+</div>
+</section>
+<section id="contact" class="section">
+<div class="contact-us-container">
+    <h1>Contact Us</h1>
+    <p>If you have any queries or need assistance, feel free to contact us!</p>
+
+    <form id="contact-form">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" placeholder="Your Name" required>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" placeholder="Your Email" required>
+
+        <label for="message">Message:</label>
+        <textarea id="message" name="message" placeholder="Your Message" required></textarea>
+
+        <button type="submit">Submit</button>
+    </form>
+
+    <div id="form-status"></div>
+</div>
+    
+</section>
+    <script src="script.js"></script>
+</body>
+</html>
